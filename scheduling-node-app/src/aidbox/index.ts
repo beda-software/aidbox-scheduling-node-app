@@ -12,7 +12,7 @@ import dotenv from 'dotenv';
 
 import { axiosInstance } from 'aidbox-react/lib/services/instance';
 
-import { appointmentFind, appointmentBook } from './operations';
+import { appointmentFind, appointmentBook, fhirAppointmentBook, fhirAppointmentFind } from './operations';
 
 export const manifest: ManifestProps = {
   apiVersion: 1,
@@ -36,7 +36,9 @@ export const manifest: ManifestProps = {
     },
   },
   operations: {
+    'fhir-appointment-book': fhirAppointmentBook,
     'appointment-book': appointmentBook,
+    'fhir-appointment-find': fhirAppointmentFind,
     'appointment-find': appointmentFind,
     'scheduling-app-healthcheck': {
       method: 'GET',
